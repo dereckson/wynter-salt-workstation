@@ -21,6 +21,7 @@ Directories follow the `roles/<role name>/<unit name>` structure.
 Roles
 =====
 
+* core: units for every machine, workstation or not
 * workstation: a dev/ssh/browser machine used as a workstation
 
 Servers
