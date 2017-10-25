@@ -1,10 +1,10 @@
-#     ___ ___             __
-#    |   Y   .--.--.-----|  |_.-----.----.
-#    |.  |   |  |  |     |   _|  -__|   _|
-#    |. / \  |___  |__|__|____|_____|__|
-#    |:      |_____|
-#    |::.|:. |       Dereckson's salt workstation
-#    `--- ---'       states
+      ___ ___             __
+     |   Y   .--.--.-----|  |_.-----.----.
+     |.  |   |  |  |     |   _|  -__|   _|
+     |. / \  |___  |__|__|____|_____|__|
+     |:      |_____|
+     |::.|:. |        Dereckson's states
+     `--- ---'        for a workstation.
 
 This state root configuration allows to maintain workstations
 details like the eid in Chromium installation automatically.
@@ -16,7 +16,7 @@ States are organized in roles and units. A role is an intent
 like "a workstation". An unit is a set of states to deploy
 something like "eid".
 
-roles/<role name>/<unit name>
+Directories follow the `roles/<role name>/<unit name>` structure.
 
 Roles
 =====
