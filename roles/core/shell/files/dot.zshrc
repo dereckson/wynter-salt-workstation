@@ -12,6 +12,7 @@
 #
 #   :: Completions
 #   :: History
+#   :: Prompt
 #   :: Background jobs
 #   :: Compatibility with csh
 #   :: SSH
@@ -45,6 +46,12 @@ HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
+
+#   -------------------------------------------------------------
+#   Prompt
+#   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+prompt='%B%/%b ] '
 
 #   -------------------------------------------------------------
 #   Background jobs
