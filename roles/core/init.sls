@@ -6,4 +6,5 @@
 #   License:        Trivial work, not eligible to copyright
 #   -------------------------------------------------------------
 
-#   This section is intentionally left blank.
+include:
+  - .shell
