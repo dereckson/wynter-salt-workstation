@@ -97,6 +97,8 @@ source $HOME/bin/ssh-agent-session
 
 bindkey -e
 
+[[ $TERM == screen ]] && TERM=screen-256color
+
 autoload zkbd
 function zkbd_file() {
     [[ -f ~/.zkbd/${TERM}-${VENDOR}-${OSTYPE} ]] && printf '%s' ~/".zkbd/${TERM}-${VENDOR}-${OSTYPE}" && return 0
