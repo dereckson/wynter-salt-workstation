@@ -17,6 +17,7 @@
 #   :: Compatibility with csh
 #   :: SSH
 #   :: Keys bindings
+#   :: VCS
 #
 #   -------------------------------------------------------------
 
@@ -137,3 +138,33 @@ export WORDCHARS='*?_[]~=&;!#$%^(){}'
 [[ -n "$key[Down]"      ]] && bindkey -- "$key[Down]"      down-line-or-beginning-search
 [[ -n "$key[Left]"      ]] && bindkey -- "$key[Left]"      backward-char
 [[ -n "$key[Right]"     ]] && bindkey -- "$key[Right]"     forward-char
+
+#   -------------------------------------------------------------
+#   VCS
+#
+#   :: alias to git-achievements
+#   :: vcs_info prompt
+#
+#   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+alias git=git-achievements
+compdef git-achievements=git
+
+setopt prompt_subst
+autoload -Uz vcs_info
+
+zstyle ':vcs_info:*' actionformats \
+    '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f '
+zstyle ':vcs_info:*' formats       \
+    '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{5}]%f '
+zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{3}%r'
+
+zstyle ':vcs_info:*' enable git cvs svn
+
+vcs_info_wrapper() {
+    vcs_info
+    if [ -n "$vcs_info_msg_0_" ]; then
+        echo "%{$fg[grey]%}${vcs_info_msg_0_}%{$reset_color%}$del"
+    fi
+}
+RPROMPT=$'$(vcs_info_wrapper)'
