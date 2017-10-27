@@ -15,11 +15,13 @@
 #   :: Prompt
 #   :: Background jobs
 #   :: Compatibility with csh
+#   :: Environment
 #   :: SSH
 #   :: Keys bindings
 #   :: External modules
 #   :: VCS
 #   :: Aliases for salt-wrapper
+#   :: Misc aliases
 #
 #   -------------------------------------------------------------
 
@@ -87,6 +89,19 @@ unsetenv () {
 }
 
 #   -------------------------------------------------------------
+#   Environment
+#   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+[[ $TERM == screen ]] && TERM=screen-256color
+
+BLOCKSIZE=K
+
+EDITOR=nano
+
+PAGER=less
+LESS=eiMqXR
+
+#   -------------------------------------------------------------
 #   SSH
 #   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -99,8 +114,6 @@ source $HOME/bin/ssh-agent-session
 #   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 bindkey -e
-
-[[ $TERM == screen ]] && TERM=screen-256color
 
 autoload zkbd
 function zkbd_file() {
@@ -180,7 +193,7 @@ vcs_info_wrapper() {
 RPROMPT=$'$(vcs_info_wrapper)'
 
 #   -------------------------------------------------------------
-#   Salt wrapper
+#   Aliases for salt-wrapper
 #
 #   https://docs.nasqueron.org/salt-wrapper/admin.html#shell-aliases
 #   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -191,3 +204,24 @@ alias salt-cloud='salt-wrapper salt-cloud'
 alias salt-key='salt-wrapper salt-key'
 alias salt-run='salt-wrapper salt-run'
 alias salt-ssh='salt-wrapper salt-ssh'
+
+#   -------------------------------------------------------------
+#   Misc aliases
+#   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+alias   cd..='cd ..'
+alias  cd...='cd ../..'
+alias cd....='cd ../../..'
+
+alias go-bin    'cd $HOME/bin'
+alias go-config 'cd $HOME/dev/wikimedia/operations/mediawiki-config'
+
+alias h=history
+alias n=nano
+alias untar='tar xzvf'
+
+alias si='french-conjugator --mode=subjunctive --tense=imperfect'
+alias t='t --task-dir ~/.tasks --list tasks'
+
+alias lastwp='tail -n 50000 irclogs/freenode/#wikipedia-fr.log'
+alias lastwolf='tail -n 50000 irclogs/freenode/#wolfplex.log'
