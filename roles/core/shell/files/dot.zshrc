@@ -18,6 +18,7 @@
 #   :: SSH
 #   :: Keys bindings
 #   :: VCS
+#   :: Aliases for salt-wrapper
 #
 #   -------------------------------------------------------------
 
@@ -168,3 +169,16 @@ vcs_info_wrapper() {
     fi
 }
 RPROMPT=$'$(vcs_info_wrapper)'
+
+#   -------------------------------------------------------------
+#   Salt wrapper
+#
+#   https://docs.nasqueron.org/salt-wrapper/admin.html#shell-aliases
+#   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+alias salt='salt-wrapper salt'
+alias salt-call='salt-wrapper salt-call'
+alias salt-cloud='salt-wrapper salt-cloud'
+alias salt-key='salt-wrapper salt-key'
+alias salt-run='salt-wrapper salt-run'
+alias salt-ssh='salt-wrapper salt-ssh'
