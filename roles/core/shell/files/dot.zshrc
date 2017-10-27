@@ -17,6 +17,7 @@
 #   :: Compatibility with csh
 #   :: SSH
 #   :: Keys bindings
+#   :: External modules
 #   :: VCS
 #   :: Aliases for salt-wrapper
 #
@@ -139,6 +140,14 @@ export WORDCHARS='*?_[]~=&;!#$%^(){}'
 [[ -n "$key[Down]"      ]] && bindkey -- "$key[Down]"      down-line-or-beginning-search
 [[ -n "$key[Left]"      ]] && bindkey -- "$key[Left]"      backward-char
 [[ -n "$key[Right]"     ]] && bindkey -- "$key[Right]"     forward-char
+
+#   -------------------------------------------------------------
+#   External modules
+#
+#   :: pm
+#   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+source ~/.pm/pm.zsh
 
 #   -------------------------------------------------------------
 #   VCS
