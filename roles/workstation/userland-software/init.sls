@@ -2,11 +2,9 @@
 #   Salt — Provision a small local network
 #   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #   Project:        Wynter
-#   Created:        2017-10-25
+#   Created:        2017-11-13
 #   License:        Trivial work, not eligible to copyright
 #   -------------------------------------------------------------
 
-base:
-  '*':
-    - core/users
-    - workstation/atom
+include:
+  - .atom

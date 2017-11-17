@@ -8,3 +8,4 @@
 
 include:
   - .eid
+  - .userland-software
