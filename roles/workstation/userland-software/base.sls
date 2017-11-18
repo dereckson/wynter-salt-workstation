@@ -4,6 +4,7 @@
 #   Project:        Wynter
 #   Created:        2016-04-09
 #   License:        Trivial work, not eligible to copyright
+#   Keep in sync:   rOPS roles/shellserver/userland-software/base.sls
 #   -------------------------------------------------------------
 
 {% from "map.jinja" import packages, packages_prefixes with context %}

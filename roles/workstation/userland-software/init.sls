@@ -9,3 +9,6 @@
 include:
   - .base
   - .atom
+  - .dev
+  - .misc
+  - .psysh
