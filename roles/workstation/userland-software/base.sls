@@ -215,3 +215,14 @@ media:
       - {{ packages.exiftool }}
       - {{ packages.imagemagick }}
       - cmus
+
+#   -------------------------------------------------------------
+#   Desktop manager
+#   -------------------------------------------------------------
+
+desktop_managers:
+  pkg:
+    - installed
+    - pkgs:
+        - gnome3
+        - cinnamon
