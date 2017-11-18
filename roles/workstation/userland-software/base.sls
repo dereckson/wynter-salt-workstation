@@ -227,3 +227,6 @@ desktop_managers:
     - pkgs:
         - gnome3
         - cinnamon
+        {% if grains['os'] == 'FreeBSD' %}
+        - xorg
+        {% endif %}
