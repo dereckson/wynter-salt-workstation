@@ -10,3 +10,4 @@ base:
   '*':
     - core/users
     - workstation/atom
+    - workstation/synergy

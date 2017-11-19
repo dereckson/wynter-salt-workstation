@@ -18,6 +18,7 @@ desktop_environment:
         - gnome3
         - cinnamon
         - guake
+        - synergy
         {% if grains['os'] == 'FreeBSD' %}
         - xorg
         {% endif %}

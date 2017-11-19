@@ -1,0 +1,18 @@
+#!/bin/sh
+
+#   -------------------------------------------------------------
+#   Starting script for X sessions
+#   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#   Project:        Wynter
+#   License:        Trivial work, not eligible to copyright
+#   -------------------------------------------------------------
+
+#   -------------------------------------------------------------
+#   Synergy
+#   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+{% if is_synergy_server %}
+synergys --daemon --no-tray --debug NOTE --name {{ hostname }} -c {{ etc }}/synergy.conf --address :24800
+{% else %}
+synergyc --daemon --no-tray --debug WARNING --name {{ hostname }} {{ synergy_server }}:24800
+{% endif %}
