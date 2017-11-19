@@ -27,4 +27,3 @@ desktop_browsers:
     - pkgs:
         - chromium
         - firefox
-       
