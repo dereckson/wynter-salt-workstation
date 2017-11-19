@@ -31,6 +31,8 @@ devserver_software_dev_java:
       - openjdk8
       - apache-ant
       - maven
+      - openjfx8-devel
+      - openjfx8-scenebuilder
 
 #   -------------------------------------------------------------
 #   .Net languages
