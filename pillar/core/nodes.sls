@@ -6,7 +6,10 @@
 #   License:        Trivial work, not eligible to copyright
 #   -------------------------------------------------------------
 
-include:
-  - .shell
-  - .home
-  - .drivers
+#   -------------------------------------------------------------
+#   Forest nodes
+#   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+nodes:
+  tigraki:
+    laptop: True

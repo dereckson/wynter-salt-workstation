@@ -8,6 +8,7 @@
 
 base:
   '*':
+    - core/nodes
     - core/users
     - workstation/atom
     - workstation/synergy

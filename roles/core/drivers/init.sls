@@ -2,11 +2,11 @@
 #   Salt — Provision a small local network
 #   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #   Project:        Wynter
-#   Created:        2017-10-25
+#   Created:        2017-11-20
 #   License:        Trivial work, not eligible to copyright
 #   -------------------------------------------------------------
 
 include:
-  - .shell
-  - .home
-  - .drivers
+  {% if grains['os'] == 'FreeBSD' %}
+  - .freebsd
+  {% endif %}
