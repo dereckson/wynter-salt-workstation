@@ -28,3 +28,8 @@ desktop_browsers:
     - pkgs:
         - chromium
         - firefox
+
+desktop_utilities:
+  pkg.installed:
+    - pkgs:
+        - filezilla
