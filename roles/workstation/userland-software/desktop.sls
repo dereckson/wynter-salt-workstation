@@ -29,7 +29,9 @@ desktop_browsers:
         - chromium
         - firefox
 
-desktop_utilities:
+desktop_applications:
   pkg.installed:
     - pkgs:
+        - calibre
         - filezilla
+        - stellarium
