@@ -33,6 +33,7 @@ devserver_software_dev_java:
       - maven
       - openjfx8-devel
       - openjfx8-scenebuilder
+      - glassfish
 
 #   -------------------------------------------------------------
 #   .Net languages
