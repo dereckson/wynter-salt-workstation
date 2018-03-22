@@ -9,3 +9,4 @@
 include:
   - .eid
   - .userland-software
+  - .fonts
