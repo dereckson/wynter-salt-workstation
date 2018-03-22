@@ -6,6 +6,8 @@
 #   License:        Trivial work, not eligible to copyright
 #   -------------------------------------------------------------
 
+{% if grains['os'] == 'FreeBSD' %}
+
 #   -------------------------------------------------------------
 #   Touchpad
 #   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -42,5 +44,7 @@ cuse4bsd_support_in_boot_loader:
   file.append:
     - name: /boot/loader.conf
     - text: cuse4bsd_load="YES"
+
+{% endif %}
 
 {% endif %}
