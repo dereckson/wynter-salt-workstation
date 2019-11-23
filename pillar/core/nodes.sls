@@ -13,3 +13,5 @@
 nodes:
   tigraki:
     laptop: True
+  tribalcloud:
+    laptop: True
