@@ -1,0 +1,19 @@
+#!/bin/sh
+
+AGENT_INFO=$HOME/bin/ssh-agent-session
+MODE=PuTTY
+
+if [ $MODE = "OpenSSH" ]; then
+        ssh-agent | grep -v echo > $AGENT_INFO
+        source $AGENT_INFO
+        ssh-add
+elif [ $MODE = "PuTTY" ]; then
+        pageant $(cygpath -w $HOME/.ssh/id_ed25519.ppk)
+        ssh-pageant | grep -v echo > $AGENT_INFO
+        source $AGENT_INFO
+else
+        echo Unknown mode: $MODE
+        exit 2
+fi
+
+ssh -t ysul.nasqueron.org tmux -2 -u attach
