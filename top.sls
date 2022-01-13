@@ -16,3 +16,5 @@ base:
     - roles/workstation
   'tigraki':
     - roles/workstation
+  'tribalcloud':
+    - roles/cygwin-workstation
