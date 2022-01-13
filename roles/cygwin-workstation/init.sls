@@ -8,3 +8,4 @@
 
 include:
   - .cygwin-environment
+  - .windows-userland
