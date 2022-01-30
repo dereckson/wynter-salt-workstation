@@ -11,4 +11,5 @@ base:
     - core/nodes
     - core/users
     - workstation/atom
+    - workstation/repo
     - workstation/synergy
