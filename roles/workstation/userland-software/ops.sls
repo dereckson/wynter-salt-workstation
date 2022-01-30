@@ -1,17 +1,13 @@
 #   -------------------------------------------------------------
-#   Salt — Provision a small local network
+#   Salt — Provision ops software
 #   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #   Project:        Wynter
-#   Created:        2017-11-13
 #   License:        Trivial work, not eligible to copyright
 #   -------------------------------------------------------------
 
-include:
-  - .repo
-  - .base
-  - .dev
-  - .ops
-  - .misc
-  - .psysh
-  - .desktop
-  - .atom
+{% from "map.jinja" import packages, packages_prefixes with context %}
+
+userland_software_ops:
+  pkg.installed:
+    - pkgs:
+      - vault
