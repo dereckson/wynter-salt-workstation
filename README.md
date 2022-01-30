@@ -24,6 +24,16 @@ Roles
 * core: units for every machine, workstation or not
 * workstation: a dev/ssh/browser machine used as a workstation
 
+Setup a new machine
+===================
+
+For a master, or masterless installation:
+
+1. Include it in the pillar data if needed (e.g. declare a laptop)
+2. Symlink your local copy of this repository to /srv/salt
+3. Sync the custom modules (_modules/ folder):
+   `salt-call --local saltutil.sync_all`
+
 Servers
 =======
 
