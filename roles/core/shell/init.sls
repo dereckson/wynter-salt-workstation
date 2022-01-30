@@ -26,4 +26,6 @@ shell_software:
   file.managed:
     - source: salt://roles/core/shell/files/dot.zshrc
     - replace: False
+    - user: {{ user }}
+    - group: {{ user }}
 {% endfor %}
