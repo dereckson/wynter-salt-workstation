@@ -57,6 +57,7 @@ utilities:
       - mosh
       - cmatrix
       - figlet
+      - glow
       - grc
       - nmap
       - toilet
