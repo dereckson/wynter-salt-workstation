@@ -29,6 +29,8 @@ shells:
     - source: https://raw.githubusercontent.com/Angelmmiguel/pm/master/zsh/_pm
     - source_hash: deea33968be713cdbd8385d3a72df2dd09c444e42499531893133f009f0ce0ea
 
+    - makedirs: True
+
 #   -------------------------------------------------------------
 #   Editors
 #
