@@ -27,7 +27,13 @@ eid_software:
 {% set home = dirs.home + "/" + user %}
 eid_chromium_setup_for_{{ user }}:
   cmd.run:
-    - name: modutil -dbdir sql:.pki/nssdb -add "Belgium eID" -libfile {{ dirs.lib }}/libbeidpkcs11.so.0
+    - name: |
+          mkdir -p .pki/nssdb
+          chmod 700 .pki/nssdb
+          certutil -d .pki/nssdb -N --empty-password
+          modutil -force -add "Belgium eID" \
+              -libfile {{ dirs.lib }}/libbeidpkcs11.so.0 \
+              -dbdir sql:.pki/nssdb
     - cwd: {{ home }}
     - runas: {{ user }}
     - creates: {{ home }}/.pki/nssdb/pkcs11.txt

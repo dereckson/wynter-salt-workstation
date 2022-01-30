@@ -44,4 +44,11 @@ enable_rpmfusion_{{ flavour }}:
 {% endfor %}
 {% endif %}
 
+{% for repo_name, url in pillar['repositories']['third_party'].items() %}
+enable_repo_{{ repo_name }}:
+  cmd.run:
+    - name: dnf install -y {{ url }}
+    - creates: /etc/yum.repos.d/{{ repo_name }}.repo
+{% endfor %}
+
 {% endif %}

@@ -20,3 +20,6 @@ repositories:
     rpmfusion_rawhide:
       - free-release-rawhide
       - nonfree-release-rawhide
+
+    third_party:
+        eid-archive: https://eid.belgium.be/sites/default/files/software/eid-archive-fedora-2021-1.noarch.rpm
