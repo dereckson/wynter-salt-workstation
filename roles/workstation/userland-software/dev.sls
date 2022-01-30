@@ -78,6 +78,16 @@ devserver_software_dev_php:
     - pkgs:
       - {{ packages.phpunit }}
 
+/opt/composer.phar:
+  file.managed:
+    - source: https://getcomposer.org/download/2.2.5/composer.phar
+    - source_hash: 81ef304a70c957d6f05a7659f03b00eb50df6155195f51118459b2e49c96c3f3
+    - mode: 0755
+
+/usr/local/bin/phar:
+  file.symlink:
+    - target: /opt/composer.phar
+
 #   -------------------------------------------------------------
 #   Python
 #   -------------------------------------------------------------
