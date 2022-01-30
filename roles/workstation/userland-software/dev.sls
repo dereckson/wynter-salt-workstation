@@ -110,6 +110,10 @@ devserver_software_dev_rust:
     - pkgs:
       - rust
 
+      # Needed by diesel
+      - {{ packages.libpq }}
+      - {{ packages.sqlite }}
+
 #   -------------------------------------------------------------
 #   Shell
 #   -------------------------------------------------------------

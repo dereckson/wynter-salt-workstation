@@ -12,4 +12,8 @@
 
 users:
   dereckson:
-    {}
+    tasks:
+
+      # Rust
+      - install_rustup
+      - install_diesel
