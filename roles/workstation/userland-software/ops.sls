@@ -11,3 +11,4 @@ userland_software_ops:
   pkg.installed:
     - pkgs:
       - vault
+      - ansible
