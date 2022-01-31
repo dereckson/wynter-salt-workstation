@@ -23,6 +23,9 @@ shells:
       - tcsh
       {% endif %}
 
+      # Shell prompt
+      - starship
+
 /usr/local/share/zsh/site-functions/_pm:
   file.managed:
     # At commit 683d331 - 2017-11-05
