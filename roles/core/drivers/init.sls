@@ -8,3 +8,4 @@
 
 include:
   - .freebsd
+  - .linux-bluetooth
