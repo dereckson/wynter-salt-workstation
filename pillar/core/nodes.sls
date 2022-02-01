@@ -17,3 +17,4 @@ nodes:
   tribalcloud:
     laptop: True
     rollingRelease: True
+    razer: True

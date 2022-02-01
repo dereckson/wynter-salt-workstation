@@ -9,3 +9,4 @@
 include:
   - .freebsd
   - .linux-bluetooth
+  - .razer
