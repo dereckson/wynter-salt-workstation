@@ -134,6 +134,20 @@ dev_popular_libs:
 #   Languages
 #   -------------------------------------------------------------
 
+{% if grains['os'] == 'Fedora' and not node.has('rollingRelease') %}
+
+enable_remi_repository:
+  cmd.run:
+    - name: |
+        dnf install -y http://rpms.remirepo.net/fedora/remi-release-{{ grains['osrelease'] }}.rpm
+        dnf module -y reset php
+        dnf config-manager --set-enabled remi
+    - creates: /etc/yum.repos.d/remi.repo
+{% endif %}
+
+# TODO: test if dnf install php works or if we need to specify the module:
+# dnf module -y install php:remi-8.1
+
 languages_removed:
   pkg:
     - removed
