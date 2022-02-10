@@ -1,0 +1,12 @@
+[Unit]
+Description=Logitech G560 LED controller, RPC Service.
+After=multi-user.target
+
+[Service]
+ExecStart=/usr/bin/python3 g560_service.py
+WorkingDirectory=/opt/logitech-g560-led
+Restart=always
+SyslogIdentifier=G560_LED
+
+[Install]
+WantedBy=multi-user.target

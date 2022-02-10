@@ -18,3 +18,4 @@ nodes:
     laptop: True
     rollingRelease: True
     razer: True
+    g560: True
