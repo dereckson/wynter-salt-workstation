@@ -168,4 +168,5 @@ devserver_software_dev_misctools:
   pkg:
     - installed
     - pkgs:
+      - colordiff
       - git-review
