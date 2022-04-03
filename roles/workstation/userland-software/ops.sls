@@ -12,3 +12,4 @@ userland_software_ops:
     - pkgs:
       - vault
       - ansible
+      - {{ packages.icedtea }}
