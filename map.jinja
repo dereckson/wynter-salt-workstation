@@ -33,7 +33,7 @@
 
 {% set packages_prefixes = salt['grains.filter_by']({
   'Debian': {
-    'php': 'php7.1-',
+    'php': 'php8.2-',
     'python2': '',
     'python3': 'python3-',
   },
@@ -44,9 +44,9 @@
     'rubygem': 'rubygem-',
   },
   'FreeBSD' : {
-    'php': 'php71-',
+    'php': 'php83-',
     'python2': 'py27-',
-    'python3': 'py36-',
+    'python3': 'py39-',
     'rubygem': 'rubygem-',
   },
 }, default='Debian') %}
@@ -124,14 +124,14 @@
     'aspell-fr': 'fr-aspell',
     'aspell-en': 'en-aspell',
     'boost': 'boost-all',
-    'certbot': 'py27-certbot',
+    'certbot': 'py39-certbot',
     'composer': 'php-composer',
     'cppunit': 'cppunit',
     'emacs': 'emacs-nox11',
     'exiftool': 'p5-Image-ExifTool-devel',
     'icedtea': 'icedtea-web',
     'imagemagick': 'ImageMagick',
-    'libpq': 'postgresql13-client',
+    'libpq': 'postgresql15-client',
     'librabbitmq': 'rabbitmq-c-devel',
     'mariadb': 'mariadb102-server',
     'node': 'node',
@@ -139,7 +139,7 @@
     'pear': 'pear',
     'phpcs': 'pear-PHP_CodeSniffer',
     'phpunit': 'phpunit6',
-    'sphinx': 'py36-sphinx',
+    'sphinx': 'py39-sphinx',
     'sqlite', 'sqlite3',
     'tcltls': 'tcltls',
     'tdom': 'tDOM',
