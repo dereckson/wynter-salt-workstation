@@ -14,7 +14,7 @@
 {% if grains['os'] == 'CentOS' %}
 epel-release:
   pkg.installed
-{% %}
+{% endif %}
 
 
 #   -------------------------------------------------------------

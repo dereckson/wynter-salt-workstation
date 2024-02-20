@@ -15,7 +15,7 @@
 
 {% if salt['node.has']('laptop') %}
 
-bluez-tools;
+bluez-tools:
   pkg.installed
 
 {% endif %}
