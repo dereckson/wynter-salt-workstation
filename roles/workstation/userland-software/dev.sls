@@ -108,7 +108,7 @@ devserver_software_dev_ruby:
   pkg:
     - installed
     - pkgs:
-      - {{ packages_prefixes.rubygem }}rubocop
+      - {{ packages.rubocop }}
 
 #   -------------------------------------------------------------
 #   Rust
