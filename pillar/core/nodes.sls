@@ -14,6 +14,10 @@ nodes:
   tigraki:
     laptop: True
 
+  thrower:
+    laptop: True
+    g560: True
+
   tribalcloud:
     laptop: True
     rollingRelease: True
