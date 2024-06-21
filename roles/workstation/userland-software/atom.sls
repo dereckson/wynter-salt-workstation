@@ -25,23 +25,23 @@ atom_gpgkey:
 {% endif %}
 
 #   -------------------------------------------------------------
-#   Atom software
+#   Pulsar software
 #   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-atom:
+pulsar:
   pkg.installed
 
 #   -------------------------------------------------------------
-#   Atom packages
+#   Pulsar packages
 #   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 {% for user in salt['pillar.get']("users", []) %}
 {% set home = dirs.home + "/" + user %}
 
-{% for package in salt['pillar.get']("atom_packages:" + user, []) %}
-atom_package_{{ package }}:
+{% for package in salt['pillar.get']("pulsar_packages:" + user, []) %}
+pulsar_package_{{ package }}:
   cmd.run:
-    - name: apm install {{ package }}
+    - name: ppm install {{ package }}
     - runas: {{ user }}
     - creates: {{ home }}/.atom/packages/{{ package }}
 {% endfor %}

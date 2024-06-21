@@ -7,12 +7,13 @@
 #   License:        Trivial work, not eligible to copyright
 #   -------------------------------------------------------------
 
-atom_packages:
+pulsar_packages:
   dereckson:
+    - atom-jinja2
     - atom-salt
     - city-lights-icons
     - city-lights-syntax
     - city-lights-ui
     - editorconfig
+    - language-salt
     - language-tcl
-    - teletype
