@@ -5,7 +5,7 @@
 #   License:        Trivial work, not eligible to copyright
 #   -------------------------------------------------------------
 
-{% from "map.jinja" import packages, packages_prefixes with context %}
+{% from "map.jinja" import packages, packages_prefixes, services with context %}
 
 #   -------------------------------------------------------------
 #   General multimedia software
@@ -27,9 +27,9 @@ multimedia:
 g560_led_dependencies:
   pkg.installed:
     - pkgs:
-      - {{ packages_prefixes.python3 }}-pyusb
-      - {{ packages_prefixes.python3 }}-gobject
-      - {{ packages_prefixes.python3 }}-rpyc
+      - {{ packages["python3-usb"] }}
+      - {{ packages["python3-gobject"] }}
+      - {{ packages_prefixes.python3 }}rpyc
 
 g560_led_repo:
   file.directory:

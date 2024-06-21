@@ -72,6 +72,8 @@
     'pear': 'php-pear',
     'phpcs': 'php-codesniffer',
     'phpunit': 'phpunit',
+    'python3-gobject': 'python3-gi',
+    'python3-usb': 'python3-usb',
     'rubocop': 'rubocop',
     'sphinx': 'python3-sphinx',
     'sqlite': 'sqlite3-dev',
@@ -101,6 +103,8 @@
     'pear': 'php-pear',
     'phpcs': 'php-pear-PHP-CodeSniffer',
     'phpunit': 'phpunit7',
+    'python3-gobject': 'python-gobject',
+    'python3-usb': 'python-pyusb',
     'rubocop': 'rubygem-rubocop',
     'sphinx': 'python3-sphinx',
     'sqlite': 'sqlite-devel',
@@ -152,4 +156,19 @@
     'verbiste': 'fr-verbiste',
     'youtube-dl': 'youtube_dl',
   },
+}, default='Debian') %}
+
+{% set services = salt['grains.filter_by']({
+    'Debian': {
+        'manager': 'systemd',
+        'firewall': 'iptables',
+    },
+    'RedHat': {
+        'manager': 'systemd',
+        'firewall': 'firewalld',
+    },
+    'FreeBSD' : {
+        'manager': 'rc',
+        'firewall': 'pf',
+    },
 }, default='Debian') %}
