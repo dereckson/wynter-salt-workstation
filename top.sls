@@ -9,14 +9,7 @@
 base:
   '*':
     - roles/core
-  'orin':
+  'bluedrake':
     - roles/workstation
-    - roles/fedora-dev
-  'graywell':
+  'yakin':
     - roles/workstation
-  'thrower':
-    - roles/workstation
-  'tigraki':
-    - roles/workstation
-  'tribalcloud':
-    - roles/cygwin-workstation

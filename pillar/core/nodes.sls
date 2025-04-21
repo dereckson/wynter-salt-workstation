@@ -11,15 +11,9 @@
 #   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 nodes:
-  tigraki:
+  yakin:
     laptop: True
 
-  thrower:
+  bluedrake:
     laptop: True
-    g560: True
-
-  tribalcloud:
-    laptop: True
-    rollingRelease: True
-    razer: True
     g560: True
