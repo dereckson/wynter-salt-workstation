@@ -88,6 +88,12 @@ utilities:
       - wget
       {% endif %}
 
+utilities_xorg:
+  pkg:
+    - installed
+    - pkgs:
+      - xclip
+
 utilities_www:
   pkg:
     - installed
