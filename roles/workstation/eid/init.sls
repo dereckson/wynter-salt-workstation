@@ -17,9 +17,9 @@
 eid_repo:
   cmd.run:
     - name: |
-          wget https://eid.belgium.be/sites/default/files/software/eid-archive_2024.1_all.deb
-          dpkg -i eid-archive_2024.1_all.deb
-          rm -f eid-archive_2024.1_all.deb
+          wget https://eid.belgium.be/sites/default/files/software/eid-archive_latest.deb
+          dpkg -i eid-archive_latest.deb
+          rm -f eid-archive_latest.deb
     - cwd: /tmp
     - creates: /etc/apt/sources.list.d/eid.list
 
