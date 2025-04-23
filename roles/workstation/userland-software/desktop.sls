@@ -15,11 +15,9 @@
 desktop_environment:
   pkg.installed:
     - pkgs:
-        - gnome3
-        - cinnamon
         - guake
-        - synergy
         {% if grains['os'] == 'FreeBSD' %}
+        - gnome3
         - xorg
         {% endif %}
 

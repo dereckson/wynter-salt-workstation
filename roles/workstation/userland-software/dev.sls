@@ -17,7 +17,7 @@ devserver_software_dev_c:
     - installed
     - pkgs:
       - {{ packages.boost }}
-      - cmocka
+      - {{ packages.cmocka }}
       - {{ packages.librabbitmq }}
 
 #   -------------------------------------------------------------
@@ -28,12 +28,10 @@ devserver_software_dev_java:
   pkg:
     - installed
     - pkgs:
-      - openjdk8
-      - apache-ant
+      - openjdk-17-jdk
+      - {{ packages.ant }}
       - maven
-      - openjfx8-devel
-      - openjfx8-scenebuilder
-      - glassfish
+      - openjfx
 
 #   -------------------------------------------------------------
 #   .Net languages
@@ -43,7 +41,7 @@ devserver_software_dev_dotnet:
   pkg:
     - installed
     - pkgs:
-      - mono
+      - {{ packages.mono }}
 
 #   -------------------------------------------------------------
 #   Node
@@ -80,25 +78,13 @@ devserver_software_dev_php:
 
 /opt/composer.phar:
   file.managed:
-    - source: https://getcomposer.org/download/2.2.5/composer.phar
-    - source_hash: 81ef304a70c957d6f05a7659f03b00eb50df6155195f51118459b2e49c96c3f3
+    - source: https://getcomposer.org/download/2.8.8/composer.phar
+    - source_hash: fb2bdaa0b59572c8b07b3b4d64af72bf223beaf62b4a8ffdfe5c863d28fdd08a0e2c006db19e0fb988b4f05be4a61e56
     - mode: 0755
 
 /usr/local/bin/composer:
   file.symlink:
     - target: /opt/composer.phar
-
-#   -------------------------------------------------------------
-#   Python
-#   -------------------------------------------------------------
-
-devserver_software_dev_python:
-  pkg:
-    - installed
-    - pkgs:
-      - {{ packages_prefixes.python2 }}nltk
-      - {{ packages_prefixes.python2 }}numpy
-      - {{ packages_prefixes.python2 }}virtualenv
 
 #   -------------------------------------------------------------
 #   Ruby
@@ -118,7 +104,7 @@ devserver_software_dev_rust:
   pkg:
     - installed
     - pkgs:
-      - rust
+      - {{ packages.rust }}
 
       # Needed by diesel
       - {{ packages.libpq }}
@@ -132,7 +118,8 @@ devserver_software_dev_shell:
   pkg:
     - installed
     - pkgs:
-      - hs-ShellCheck
+      - bats
+      - {{ packages.shellcheck }}
 
 #   -------------------------------------------------------------
 #   TCL
@@ -144,9 +131,11 @@ devserver_software_dev_tcl:
     - pkgs:
       - rlwrap
       - tcllib
-      - tclsoap
       - {{ packages.tcltls }}
       - {{ packages.tdom }}
+      {% if grains['os'] == 'FreeBSD' %}
+      - tclsoap
+      {% endif %}
 
 #   -------------------------------------------------------------
 #   Web development

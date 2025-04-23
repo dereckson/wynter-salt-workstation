@@ -23,9 +23,6 @@ shells:
       - tcsh
       {% endif %}
 
-      # Shell prompt
-      - starship
-
 /usr/local/share/zsh/site-functions/_pm:
   file.managed:
     # At commit 683d331 - 2017-11-05
@@ -62,15 +59,12 @@ utilities:
       - mosh
       - cmatrix
       - figlet
-      - glow
       - grc
       - nmap
       - toilet
       - tmux
       - tree
-      - unrar
       - whois
-      - woof
       {% if grains['os_family'] == 'Debian' %}
       - bsdmainutils
       - sockstat
@@ -171,10 +165,10 @@ languages:
       - python3
       {% if grains['os_family'] == 'Debian' %}
       - tcl8.6-dev
-      - php7.1
+      - php8.2
       {% elif grains['os'] == 'FreeBSD' %}
       - tcl86
-      - php71
+      - php83
       {% endif %}
 
 #   -------------------------------------------------------------
@@ -187,31 +181,13 @@ languages_libs:
     - pkgs:
       # PHP
       - {{ packages_prefixes.php }}bcmath
-      - {{ packages_prefixes.php }}ctype
       - {{ packages_prefixes.php }}curl
-      - {{ packages_prefixes.php }}dom
-      - {{ packages_prefixes.php }}filter
       - {{ packages_prefixes.php }}gd
-      - {{ packages_prefixes.php }}hash
       - {{ packages_prefixes.php }}intl
-      - {{ packages_prefixes.php }}json
       - {{ packages_prefixes.php }}mbstring
-      - {{ packages_prefixes.php }}mysqli
-      - {{ packages_prefixes.php }}openssl
-      - {{ packages_prefixes.php }}pcntl
-      - {{ packages_prefixes.php }}pdo
-      - {{ packages_prefixes.php }}pdo_mysql
-      - {{ packages_prefixes.php }}pdo_sqlite
-      - {{ packages_prefixes.php }}phar
-      - {{ packages_prefixes.php }}session
-      - {{ packages_prefixes.php }}simplexml
       - {{ packages_prefixes.php }}soap
-      - {{ packages_prefixes.php }}tokenizer
-      - {{ packages_prefixes.php }}wddx
       - {{ packages_prefixes.php }}xml
-      - {{ packages_prefixes.php }}xmlwriter
       - {{ packages_prefixes.php }}xsl
-      - {{ packages_prefixes.php }}zlib
       - {{ packages.composer }}
       - {{ packages.pear }}
       - {{ packages.phpcs }}
