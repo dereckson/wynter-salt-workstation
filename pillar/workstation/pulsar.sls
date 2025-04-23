@@ -15,5 +15,4 @@ pulsar_packages:
     - city-lights-syntax
     - city-lights-ui
     - editorconfig
-    - language-salt
     - language-tcl
