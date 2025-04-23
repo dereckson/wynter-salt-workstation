@@ -10,6 +10,6 @@ base:
   '*':
     - core/nodes
     - core/users
-    - workstation/atom
+    - workstation/pulsar
     - workstation/repo
     - workstation/synergy

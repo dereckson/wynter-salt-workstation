@@ -9,27 +9,19 @@
 {% from "map.jinja" import dirs with context %}
 
 #   -------------------------------------------------------------
-#   Atom repository
-#   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-{% if grains['os_family'] == 'RedHat' %}
-
-atom_gpgkey:
-  cmd.run:
-    - name: rpm --import https://packagecloud.io/AtomEditor/atom/gpgkey
-
-/etc/yum.repos.d/atom.repo:
-  file.managed:
-    - source: salt://roles/workstation/userland-software/files/atom.repo
-
-{% endif %}
-
-#   -------------------------------------------------------------
 #   Pulsar software
 #   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-pulsar:
-  pkg.installed
+{% if grains["os"] == "Debian" %}
+install_pulsar:
+  cmd.run:
+    - name: |
+        wget -O pulsar_latest.deb "https://download.pulsar-edit.dev/?os=linux&type=linux_deb"
+        dpkg -i pulsar_latest.deb
+        rm -f pulsar_latest.deb
+    - creates: /usr/bin/pulsar
+    - cwd: /tmp
+{% endif %}
 
 #   -------------------------------------------------------------
 #   Pulsar packages
@@ -43,7 +35,7 @@ pulsar_package_{{ package }}:
   cmd.run:
     - name: ppm install {{ package }}
     - runas: {{ user }}
-    - creates: {{ home }}/.atom/packages/{{ package }}
+    - creates: {{ home }}/.pulsar/packages/{{ package }}
 {% endfor %}
 
 {% endfor %}

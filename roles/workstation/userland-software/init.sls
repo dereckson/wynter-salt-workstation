@@ -14,4 +14,4 @@ include:
   - .misc
   - .psysh
   - .desktop
-  - .atom
+  - .pulsar
