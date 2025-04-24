@@ -17,10 +17,8 @@ devserver_software_misc_vcs:
       - cvs
       - fossil
       - subversion
-      # Bridges
-      - cvs2svn
-      - {{ packages_prefixes.python2 }}hg-git
 
+{% if grains['os'] == 'FreeBSD' %}
 devserver_software_misc_media:
   pkg:
     - installed
@@ -31,6 +29,7 @@ devserver_software_misc_media:
       - speex
       - speexdsp
       - x265
+{% endif %}
 
 devserver_software_misc_text_processing:
   pkg:
@@ -40,11 +39,29 @@ devserver_software_misc_text_processing:
       - odt2txt
       - texlive-full
 
+{% if grains['os'] == 'Debian' %}
+vault_repository_key:
+  cmd.run:
+    - name: |
+        wget -O - https://apt.releases.hashicorp.com/gpg | gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+    - creates: /usr/share/keyrings/hashicorp-archive-keyring.gpg
+
+/etc/apt/sources.list.d/hashicorp.list:
+  file.managed:
+    - source: salt://roles/workstation/userland-software/files/hashicorp.list
+    - template: jinja
+    - context:
+        arch: {{ grains.osarch }}
+        oscodename: {{ grains.oscodename }}
+{% endif %}
+
 devserver_software_misc_security:
   pkg:
     - installed
     - pkgs:
+      {% if grains['os'] == 'FreeBSD' %}
       - aescrypt
+      {% endif %}
       - pwgen
       - vault
 
@@ -53,15 +70,21 @@ devserver_software_misc_tools:
     - installed
     - pkgs:
       - boxes
-      - cursive
-      - fusefs-s3fs
       - gist
       - p7zip
-      - primegen
       - rsync
-      - unix2dos
+
+      {% if grains['os'] == 'Debian' %}
+      # as unix2dos isn't packaged for Debian
+      - dos2unix
+      {% endif %}
+
       {% if grains['os'] == 'FreeBSD' %}
+      - cursive
+      - unix2dos
+      - fusefs-s3fs
       - gawk
+      - primegen
       {% endif %}
 
 {% if grains['os'] == 'FreeBSD' %}
@@ -101,32 +124,31 @@ freebsd_kernel_modules_enable:
         - pkg: freebsd_kernel_modules
 {% endif %}
 
-devserver_software_misc_p2p:
-  pkg:
-    - installed
-    - pkgs:
-      - transmission-daemon
-      - transmission-web
-
 devserver_software_misc_gadgets:
   pkg:
     - installed
     - pkgs:
-      - asciiquarium
       - binclock
       - ditaa
+      {% if grains['os'] == 'FreeBSD' %}
+      - asciiquarium
       - epte
       - weatherspect
+      {% endif %}
 
 devserver_software_misc_games:
   pkg:
     - installed
     - pkgs:
       - bsdgames
+      {% if grains['os'] == 'FreeBSD' %}
       - textmaze
+      {% endif %}
 
+{% if grains['os'] == 'FreeBSD' %}
 devserver_software_misc_network:
   pkg:
     - installed
     - pkgs:
       - getdns
+      {% endif %}
