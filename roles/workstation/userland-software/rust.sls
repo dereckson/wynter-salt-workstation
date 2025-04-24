@@ -7,8 +7,8 @@
 
 {% set triplet = salt['rust.get_rustc_triplet']() %}
 
-{% for username, user_properties in salt['pillar.get']("users", []) %}
-{% set tasks = user_properties['tasks'] }
+{% for username, user_properties in salt['pillar.get']("users", {}).items() %}
+{% set tasks = user_properties['tasks'] %}
 
 #   -------------------------------------------------------------
 #   Rustup
@@ -21,7 +21,7 @@
 
 install_rustup:
   cmd.run:
-    - name: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+    - name: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
     - runas: {{ username }}
     - creates: {{ rustup_path }}
 
