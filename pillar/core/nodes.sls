@@ -17,3 +17,4 @@ nodes:
   bluedrake:
     laptop: True
     g560: True
+    rollingRelease: True
