@@ -37,7 +37,7 @@ devserver_software_misc_text_processing:
     - pkgs:
       - antiword
       - odt2txt
-      - texlive-full
+      - {{ packages.texlive }}
 
 {% if grains['os'] == 'Debian' %}
 vault_repository_key:
@@ -70,17 +70,18 @@ devserver_software_misc_tools:
     - installed
     - pkgs:
       - boxes
-      - gist
       - p7zip
       - rsync
 
       {% if grains['os'] == 'Debian' %}
       # as unix2dos isn't packaged for Debian
       - dos2unix
+      - gist
       {% endif %}
 
       {% if grains['os'] == 'FreeBSD' %}
       - cursive
+      - gist
       - unix2dos
       - fusefs-s3fs
       - gawk
@@ -140,7 +141,7 @@ devserver_software_misc_games:
   pkg:
     - installed
     - pkgs:
-      - bsdgames
+      - {{ packages.bsdgames }}
       {% if grains['os'] == 'FreeBSD' %}
       - textmaze
       {% endif %}

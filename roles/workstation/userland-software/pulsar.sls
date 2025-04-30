@@ -23,6 +23,17 @@ install_pulsar:
     - cwd: /tmp
 {% endif %}
 
+{% if grains["os_family"] == "RedHat" %}
+install_pulsar:
+  cmd.run:
+    - name: |
+        wget -O pulsar_latest.rpm "https://download.pulsar-edit.dev/?os=linux&type=linux_rpm"
+        dnf install ./pulsar_latest.rpm
+        rm -f pulsar_latest.rpm
+    - creates: /usr/bin/pulsar
+    - cwd: /tmp
+{% endif %}
+
 #   -------------------------------------------------------------
 #   Pulsar packages
 #   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

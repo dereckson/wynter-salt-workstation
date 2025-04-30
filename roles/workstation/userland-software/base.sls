@@ -114,9 +114,9 @@ dev:
       - {{ packages.cppunit }}
       - {{ packages.ag }}
       {% if grains['os'] == 'FreeBSD' %}
+      - arcanist
       - hub
       {% else %}
-      - arcanist
       - clang
       - llvm
       - strace
@@ -134,7 +134,7 @@ dev_popular_libs:
 #   Languages
 #   -------------------------------------------------------------
 
-{% if grains['os'] == 'Fedora' and not node.has('rollingRelease') %}
+{% if grains['os'] == 'Fedora' and not salt['node.has']('rollingRelease') %}
 
 enable_remi_repository:
   cmd.run:
@@ -181,16 +181,20 @@ languages_libs:
     - pkgs:
       # PHP
       - {{ packages_prefixes.php }}bcmath
-      - {{ packages_prefixes.php }}curl
       - {{ packages_prefixes.php }}gd
       - {{ packages_prefixes.php }}intl
       - {{ packages_prefixes.php }}mbstring
       - {{ packages_prefixes.php }}soap
       - {{ packages_prefixes.php }}xml
-      - {{ packages_prefixes.php }}xsl
       - {{ packages.composer }}
       - {{ packages.pear }}
       - {{ packages.phpcs }}
+
+      {% if grains['os_family'] == 'Debian' %}
+      - {{ packages_prefixes.php }}curl
+      - {{ packages_prefixes.php }}xsl
+      {% endif %}
+
       # TCL
       - tcllib
       - {{ packages.tcltls }}
@@ -217,4 +221,8 @@ media:
     - pkgs:
       - {{ packages.exiftool }}
       - {{ packages.imagemagick }}
+      {% if grains['os_family'] == 'Debian' %}
       - cmus
+      {% elif grains['os'] == 'FreeBSD' %}
+      - cmus
+      {% endif %}

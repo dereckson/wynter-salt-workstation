@@ -28,7 +28,7 @@ devserver_software_dev_java:
   pkg:
     - installed
     - pkgs:
-      - openjdk-17-jdk
+      - {{ packages.openjdk }}
       - {{ packages.ant }}
       - maven
       - openjfx
@@ -43,6 +43,11 @@ devserver_software_dev_dotnet:
     - pkgs:
       - {{ packages.mono }}
 
+      {% if grains['os_family'] == 'RedHat' %}
+      - mono-tools
+      {% endif %}
+
+
 #   -------------------------------------------------------------
 #   Node
 #   -------------------------------------------------------------
@@ -52,7 +57,7 @@ devserver_software_dev_node:
     - installed
     - pkgs:
       - {{ packages.node }}
-      - npm
+      - {{ packages.npm }}
 
 devserver_node_packages:
   npm.installed:
@@ -90,11 +95,15 @@ devserver_software_dev_php:
 #   Ruby
 #   -------------------------------------------------------------
 
+{% if grains['os_family'] != 'RedHat' %}
+
 devserver_software_dev_ruby:
   pkg:
     - installed
     - pkgs:
       - {{ packages.rubocop }}
+
+{% endif %}
 
 #   -------------------------------------------------------------
 #   Rust
