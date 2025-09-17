@@ -6,7 +6,7 @@
 #   License:        Trivial work, not eligible to copyright
 #   -------------------------------------------------------------
 
-{% from "map.jinja" import dirs with context %}
+{% from "map.jinja" import dirs, packages with context %}
 
 #   -------------------------------------------------------------
 #   Software required
@@ -29,3 +29,26 @@ shell_software:
     - user: {{ user }}
     - group: {{ user }}
 {% endfor %}
+
+#   -------------------------------------------------------------
+#   Modules for zsh
+#   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+shell_extra_utilities_directory:
+  file.directory:
+    - name: /opt/shell_utilities
+    - makedirs: True
+
+shell_extra_utilities:
+  pkg.installed:
+    - pkgs:
+      - fzf
+      - git
+      - {{ packages.sqlite }}
+      - starship
+      - zoxide
+
+zsh_histdb_repository:
+  git.latest:
+    - name: "https://github.com/larkery/zsh-histdb.git"
+    - target: /opt/shell_utilities/zsh-histdb
