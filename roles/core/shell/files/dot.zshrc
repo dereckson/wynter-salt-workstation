@@ -160,7 +160,13 @@ export WORDCHARS='*?_[]~=&;!#$%^(){}'
 #   :: pm
 #   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-source ~/.pm/pm.zsh
+if [[ -a ~/.pm/pm.zsh ]]; then
+    source ~/.pm/pm.zsh
+    plugins=(pm)
+elif [[ -a /usr/local/share/zsh/wynter/pm/pm.zsh ]]; then
+    source /usr/local/share/zsh/wynter/pm/pm.zsh
+    plugins=(pm)
+fi
 
 #   -------------------------------------------------------------
 #   VCS
