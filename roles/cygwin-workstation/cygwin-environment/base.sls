@@ -12,4 +12,4 @@
 cygwin_install_{{ package }}:
   cyg.installed:
     - name: {{ package }}
-{% endfor% }
+{% endfor %}

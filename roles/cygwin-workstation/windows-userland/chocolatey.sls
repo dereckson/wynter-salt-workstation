@@ -24,4 +24,4 @@ install_choco:
 chocolatey_install_{{ package }}:
   chocolatey.installed:
     - name: {{ package }}
-{% endfor% }
+{% endfor %}
