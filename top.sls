@@ -10,6 +10,7 @@ base:
   '*':
     - roles/core
   'bluedrake':
+    - roles/fedora-dev
     - roles/workstation
   'yakin':
     - roles/workstation
