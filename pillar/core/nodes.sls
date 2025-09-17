@@ -18,3 +18,4 @@ nodes:
     laptop: True
     g560: True
     rollingRelease: True
+    amd_gpu: True

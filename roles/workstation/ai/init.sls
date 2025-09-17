@@ -1,13 +1,19 @@
 #   -------------------------------------------------------------
-#   Salt — Provision a small local network
+#   Deploy AI LLM stack
 #   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #   Project:        Wynter
-#   Created:        2017-10-25
 #   License:        Trivial work, not eligible to copyright
 #   -------------------------------------------------------------
 
+{% if grains['kernel'] == 'Linux' %}
+
 include:
-  - .userland-software
-  - .ai
-  - .eid
-  - .fonts
+  # Docker stack
+  - .ollama
+
+  # AMD GPU stack on workstation
+  {% if salt['node.has']('amd_gpu') %}
+  - .rocm
+  {% endif %}
+
+{% endif %}
