@@ -13,7 +13,7 @@
 #   Bluetooth
 #   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-{% if salt['node.has']('laptop') %}
+{% if salt['node.has']('laptop') or salt['node.has']('bluetooth') %}
 
 bluez-tools:
   pkg.installed
