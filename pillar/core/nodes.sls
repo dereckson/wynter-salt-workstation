@@ -17,5 +17,5 @@ nodes:
   bluedrake:
     bluetooth: True
     g560: True
-    rollingRelease: True
+    rollingRelease: False
     amd_gpu: True
