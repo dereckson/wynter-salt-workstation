@@ -13,6 +13,8 @@
 users:
   dereckson:
     tasks:
+      # Shell
+      - install_pm
 
       # Rust
       - install_rustup
