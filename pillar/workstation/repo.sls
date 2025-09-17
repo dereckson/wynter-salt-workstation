@@ -23,7 +23,7 @@ repositories:
       - nonfree-release-rawhide
 
     # Third party repositories can be given as:
-    #   a) URL repository, to be placed directly in repos folder
+    #   a) URL repository, to be placed directly in the repos folder
     #      or to be used through dnf config-manager --add-repo
     #      --> put them in third_party_as_repo
     #

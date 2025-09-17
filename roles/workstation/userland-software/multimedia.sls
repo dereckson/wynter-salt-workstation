@@ -37,7 +37,7 @@ g560_led_repo:
     - dir_mode: 0755
   git.latest:
     - name: https://github.com/mdoyleaz/Logitech-G560-LED-Controller.git
-    - branch: master # This doesn't an endorsment of that name
+    - branch: master # This doesn't constitute any endorsement of that name
     - target: /opt/logitech-g560-led
 
 /usr/local/bin/g560-led:
