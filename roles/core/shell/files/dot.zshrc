@@ -110,7 +110,7 @@ source $HOME/bin/ssh-agent-session
 #   -------------------------------------------------------------
 #   Keys bindings
 #
-#   http://zshwiki.org/home/zle/bindkeys
+#   https://web.archive.org/web/20120205211412/http://zshwiki.org/home/zle/bindkeys
 #   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 bindkey -e

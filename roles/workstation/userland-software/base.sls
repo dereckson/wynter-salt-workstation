@@ -36,7 +36,7 @@ shells:
 #
 #   Disclaimer: We don't caution the views of Richard Stallman
 #   or the Church of Emacs positions.
-#   See http://geekfeminism.wikia.com/wiki/EMACS_virgins_joke
+#   See https://geekfeminism.fandom.com/wiki/EMACS_virgins_joke
 #   -------------------------------------------------------------
 
 editors:
@@ -139,7 +139,7 @@ dev_popular_libs:
 enable_remi_repository:
   cmd.run:
     - name: |
-        dnf install -y http://rpms.remirepo.net/fedora/remi-release-{{ grains['osrelease'] }}.rpm
+        dnf install -y https://rpms.remirepo.net/fedora/remi-release-{{ grains['osrelease'] }}.rpm
         dnf module -y reset php
         dnf config-manager --set-enabled remi
     - creates: /etc/yum.repos.d/remi.repo
