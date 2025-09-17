@@ -13,4 +13,5 @@
 packages_build_software:
   pkg.installed:
     - pkgs:
+      - dnf-utils
       - perl-generators
