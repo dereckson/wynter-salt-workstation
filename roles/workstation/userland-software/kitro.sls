@@ -16,13 +16,13 @@
 
 kitro_repository:
   file.directory:
-    - name: {{ kitro_dir }}
+    - name: {{ kitro_dir }}
     - dir_mode: 0755
     - makedirs: True
   git.latest:
     - name: https://devcentral.nasqueron.org/source/wynter-kitro.git
     - branch: main
-    - target: {{ kitro_dir }}
+    - target: {{ kitro_dir }}
 
 #   -------------------------------------------------------------
 #   Organize
@@ -30,8 +30,8 @@ kitro_repository:
 
 {{ dirs.bin }}/organize-folders:
   file.symlink:
-    - target: {{ kitro_dir }}/organize/organize-folders.py
+    - target: {{ kitro_dir }}/organize/organize-folders.py
 
 {{ dirs.bin }}/organize-screenshots:
   file.symlink:
-    - target: {{ kitro_dir }}/organize/organize-screenshots.sh
+    - target: {{ kitro_dir }}/organize/organize-screenshots.sh
