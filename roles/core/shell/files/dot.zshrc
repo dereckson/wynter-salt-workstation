@@ -284,6 +284,10 @@ alias lastwolf='tail -n 50000 irclogs/freenode/#wolfplex.log'
 
 alias weather="curl https://v2.wttr.in/Brussels"
 
+if command -v sqlite3 >/dev/null 2>&1; then
+    alias sqlite=sqlite3
+fi
+
 if [[ -a ~/.zshrc-misc-aliases ]]; then
     source ~/.zshrc-misc-aliases
 fi
