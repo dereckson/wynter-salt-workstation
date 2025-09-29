@@ -88,6 +88,11 @@ devserver_software_misc_tools:
       - primegen
       {% endif %}
 
+/usr/local/bin/chrome-monthly-history:
+  file.managed:
+    - source: salt://roles/workstation/userland-software/files/scripts/chrome-monthly-history.py
+    - mode: 755
+
 {% if grains['os'] == 'FreeBSD' %}
 devserver_software_misc_ports:
   pkg:
