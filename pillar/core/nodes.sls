@@ -17,6 +17,7 @@ nodes:
   bluedrake:
     bluetooth: True
     g560: True
+    i226: True
     rollingRelease: False
     is_synergy_server: True
     amd_gpu: True

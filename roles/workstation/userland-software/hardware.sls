@@ -2,17 +2,14 @@
 #   Salt — Provision a small local network
 #   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #   Project:        Wynter
-#   Created:        2017-11-13
 #   License:        Trivial work, not eligible to copyright
 #   -------------------------------------------------------------
 
-include:
-  - .repo
-  - .base
-  - .dev
-  - .hardware
-  - .ops
-  - .misc
-  - .psysh
-  - .desktop
-  - .pulsar
+{% if salt["node.has"]("i226") and grains["kernel"] == "Linux" %}
+
+/usr/bin/restore-ethernet-controller:
+  file.managed:
+    - source: salt://roles/workstation/userland-software/files/scripts/restore-ethernet-controller.sh
+    - mode: 755
+
+{% endif %}
