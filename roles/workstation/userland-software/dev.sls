@@ -168,3 +168,4 @@ devserver_software_dev_misctools:
     - pkgs:
       - colordiff
       - git-review
+      - git-subtree
