@@ -12,5 +12,8 @@ base:
   'bluedrake':
     - roles/fedora-dev
     - roles/workstation
+  'draugh':
+    - roles/fedora-dev
+    - roles/workstation
   'yakin':
     - roles/workstation

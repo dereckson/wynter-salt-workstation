@@ -21,3 +21,8 @@ nodes:
     rollingRelease: False
     is_synergy_server: True
     amd_gpu: True
+
+  draugh:
+    bluetooth: True
+    laptop: True
+    rollingRelease: True
