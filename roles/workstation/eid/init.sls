@@ -36,6 +36,18 @@ eid_repo:
     - cwd: /tmp
     - creates: /etc/yum.repos.d/eid-archive.repo
 
+{% if salt["fedora.is_rawhide"]() %}
+# $releasever resolves to "rawhide" on Rawhide, but the eID archive only
+# publishes numbered directories for released versions (e.g. 44).
+eid_repo_rawhide_baseurl:
+  file.replace:
+    - name: /etc/yum.repos.d/eid-archive.repo
+    - pattern: \$releasever
+    - repl: {{ salt["fedora.eid_repo_last_version"]() }}
+    - require:
+      - cmd: eid_repo
+{% endif %}
+
 {% endif %}
 
 #   -------------------------------------------------------------
