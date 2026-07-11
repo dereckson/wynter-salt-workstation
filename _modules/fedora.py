@@ -17,6 +17,6 @@ def get_version(rawhide_name = 'rawhide'):
 
 
 def is_rawhide():
-    nodename = __grains__['id']
+    return __salt__["node.get"]("rollingRelease")
 
     return __pillar__.get(f'nodes:{nodename}:rollingRelease', False)
