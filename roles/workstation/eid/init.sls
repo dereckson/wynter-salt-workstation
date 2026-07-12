@@ -30,9 +30,9 @@ eid_repo:
 eid_repo:
   cmd.run:
     - name: |
-          wget https://eid.belgium.be/sites/default/files/software/eid-archive-fedora-2021-1.noarch.rpm
-          rpm -i eid-archive-fedora-2021-1.noarch.rpm
-          rm -f eid-archive-fedora-2021-1.noarch.rpm
+          wget https://eid.belgium.be/sites/default/files/software/eid-archive-fedora-2025-2.noarch.rpm
+          rpm -i eid-archive-fedora-2025-2.noarch.rpm
+          rm -f eid-archive-fedora-2025-2.noarch.rpm
     - cwd: /tmp
     - creates: /etc/yum.repos.d/eid-archive.repo
 
