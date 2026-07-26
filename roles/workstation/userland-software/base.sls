@@ -7,7 +7,7 @@
 #   Keep in sync:   rOPS roles/shellserver/userland-software/base.sls
 #   -------------------------------------------------------------
 
-{% from "map.jinja" import packages, packages_prefixes with context %}
+{% from "map.jinja" import dirs, packages, packages_prefixes with context %}
 
 #   -------------------------------------------------------------
 #   Shells
@@ -73,6 +73,11 @@ utilities:
       - gsed
       - wget
       {% endif %}
+
+{{ dirs.bin }}/tmux-reattach:
+  file.managed:
+    - source: salt://roles/workstation/userland-software/files/tmux-reattach.sh
+    - mode: 755
 
 utilities_xorg:
   pkg:
