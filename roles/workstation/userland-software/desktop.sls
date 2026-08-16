@@ -32,5 +32,6 @@ desktop_applications:
     - pkgs:
         - calibre
         - filezilla
+        - gedit
         - stellarium
         - terminator
