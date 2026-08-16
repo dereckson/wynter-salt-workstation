@@ -33,3 +33,4 @@ desktop_applications:
         - calibre
         - filezilla
         - stellarium
+        - terminator
