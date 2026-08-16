@@ -7,4 +7,5 @@
 
 include:
   - .homefiles
+  - .avatar
   - .pm

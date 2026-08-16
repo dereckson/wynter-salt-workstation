@@ -20,6 +20,9 @@ users:
       - install_rustup
       - install_diesel
 
+    # Used by AccountsService
+    avatar: /home/dereckson/Pictures/Avatars/LoupDereckson/loup_avatar-225.jpg
+
     system_pictures:
       wallpapers_apps:
         collection: Wallpapers/Apps
