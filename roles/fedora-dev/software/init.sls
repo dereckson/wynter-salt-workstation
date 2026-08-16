@@ -15,3 +15,8 @@ packages_build_software:
     - pkgs:
       - dnf-utils
       - perl-generators
+
+selinux_software:
+  pkg.installed:
+    - pkgs:
+        - setools-console
