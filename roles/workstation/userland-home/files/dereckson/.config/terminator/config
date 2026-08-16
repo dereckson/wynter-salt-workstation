@@ -35,7 +35,7 @@
   [[Local]]
     background_darkness = 0.47
     background_type = image
-    background_image = /home/dereckson/Pictures/Wallpapers/Apps/dark-muted-grunge-scifi-02.jpg
+    background_image = /home/dereckson/Pictures/Wallpapers/Apps/dark-muted-grunge-scifi.jpg
     font = Fixedsys Excelsior 3.01 12
     foreground_color = "#ffffff"
     scrollbar_position = hidden
