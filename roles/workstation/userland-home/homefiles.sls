@@ -25,27 +25,27 @@ dotfiles_for_{{ username }}:
 {% endfor %}
 
 #   -------------------------------------------------------------
-#   Wallpapers
+#   Wallpapers and other system pictures
 #   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 {% for username, user_properties in salt['pillar.get']("users", {}).items() %}
-{% for collection, args in user_properties.get("wallpapers", {}).items() %}
+{% for _collection, args in user_properties.get("system_pictures", {}).items() %}
 
-/home/{{ username }}/Pictures/Wallpapers/{{ args["collection"] }}:
+/home/{{ username }}/Pictures/{{ args["collection"] }}:
   file.directory:
     - makedirs: True
     - user: {{ username }}
     - group: {{ username }}
 
 {% for filename, source in args.get("items", {}).items() %}
-/home/{{ username }}/Pictures/Wallpapers/{{ args["collection"] }}/{{ filename }}:
+/home/{{ username }}/Pictures/{{ args["collection"] }}/{{ filename }}:
   file.managed:
     - source: {{ source }}
     - skip_verify: True
     - replace: False
+    - user: {{ username }}
+    - group: {{ username }}
 {% endfor %}
 
-
-# /home/dereckson/Pictures/Wallpapers/Apps/futuristic.jpg
 {% endfor %}
 {% endfor %}
