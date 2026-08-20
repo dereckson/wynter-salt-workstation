@@ -10,3 +10,4 @@ include:
   - .shell
   - .home
   - .drivers
+  - .network

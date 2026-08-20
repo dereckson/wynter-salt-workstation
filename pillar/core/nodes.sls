@@ -22,6 +22,9 @@ nodes:
     is_synergy_server: True
     amd_gpu: True
 
+    network:
+      main_interface: eno1
+
   draugh:
     bluetooth: True
     laptop: True
