@@ -36,14 +36,21 @@ enable_copr_{{ repository }}:
 {% for flavour in pillar['repositories']['rpmfusion'] %}
 enable_rpmfusion_{{ flavour }}:
   cmd.run:
-    - name: dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-{{ flavour }}-release-{{ grains['osrelease'] }}.noarch.rpm
+    - name: dnf install -y https://mirrors.rpmfusion.org/{{ flavour }}/fedora/rpmfusion-{{ flavour }}-release-$(rpm -E %fedora).noarch.rpm
     - creates: /etc/yum.repos.d/rpmfusion-{{ flavour }}.repo
 {% endfor %}
+
+{% if grains['osrelease'] | int >= 41 %}
+enable_fedora_cisco_openh264:
+  cmd.run:
+    - name: dnf config-manager setopt fedora-cisco-openh264.enabled=1
+    - unless: dnf repolist --enabled | grep -q '^fedora-cisco-openh264 '
+{% endif %}
 
 {% for flavour in pillar['repositories']['rpmfusion_extra'] %}
 enable_rpmfusion_{{ flavour }}:
   cmd.run:
-    - name: dnf install -y rmpfusion-{{ flavour }}
+    - name: dnf install -y rpmfusion-{{ flavour }}
     - creates: /etc/yum.repos.d/rpmfusion-{{ flavour | replace("-release", "") }}.repo
 {% endfor %}
 
@@ -51,7 +58,7 @@ enable_rpmfusion_{{ flavour }}:
 {% for flavour in pillar['repositories']['rpmfusion_rawhide'] %}
 enable_rpmfusion_{{ flavour }}:
   cmd.run:
-    - name: dnf install -y rmpfusion-{{ flavour }}
+    - name: dnf install -y rpmfusion-{{ flavour }}
     - creates: /etc/yum.repos.d/rpmfusion-{{ flavour | replace("-release", "") }}.repo
 {% endfor %}
 {% endif %}
@@ -59,7 +66,7 @@ enable_rpmfusion_{{ flavour }}:
 {% for repo_name, url in pillar['repositories']['third_party_as_repo'].items() %}
 enable_repo_{{ repo_name }}:
   cmd.run:
-    - name: dnf config-manager --add-repo {{ url }}
+    - name: dnf config-manager addrepo --from-repofile={{ url }}
     - creates: /etc/yum.repos.d/{{ repo_name }}.repo
 {% endfor %}
 
