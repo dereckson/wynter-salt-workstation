@@ -6,7 +6,7 @@
 #   License:        Trivial work, not eligible to copyright
 #   -------------------------------------------------------------
 
-{% from "map.jinja" import packages, packages_prefixes with context %}
+{% from "map.jinja" import dirs, packages, packages_prefixes with context %}
 
 #   -------------------------------------------------------------
 #   C/C++
@@ -47,6 +47,15 @@ devserver_software_dev_dotnet:
       - mono-tools
       {% endif %}
 
+
+#   -------------------------------------------------------------
+#   Python
+#   -------------------------------------------------------------
+
+devserver_software_dev_python:
+  pkg.installed:
+    - pkgs:
+      - {{ packages["python3-pip"] }}
 
 #   -------------------------------------------------------------
 #   Node
@@ -169,3 +178,15 @@ devserver_software_dev_misctools:
       - colordiff
       - git-review
       - git-subtree
+
+{% set python_packages = [
+  "merge-dictionaries",
+  "resolve-hash",
+] %}
+
+{% for package in python_packages %}
+devserver_python_{{ package }}:
+  cmd.run:
+    - name: {{ dirs.bin }}/python3 -m pip install --root-user-action=ignore {{ package }}
+    - creates: /usr/local/bin/{{ package }}
+{% endfor %}
