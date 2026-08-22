@@ -22,6 +22,9 @@ nodes:
     is_synergy_server: True
     amd_gpu: True
 
+    desktop:
+      text-scaling-factor: 1.25
+
     network:
       main_interface: eno1
 

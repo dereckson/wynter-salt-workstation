@@ -6,7 +6,7 @@
 #   License:        Trivial work, not eligible to copyright
 #   -------------------------------------------------------------
 
-{% from "map.jinja" import packages, packages_prefixes with context %}
+{% from "map.jinja" import dirs, packages, packages_prefixes with context %}
 
 #   -------------------------------------------------------------
 #   Desktop environment
@@ -35,3 +35,25 @@ desktop_applications:
         - gedit
         - stellarium
         - terminator
+
+#   -------------------------------------------------------------
+#   Per-user configuration
+#   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+{% if salt["node.has"]("desktop") %}
+{% for username in pillar["users"] %}
+
+{% set text_scaling_factor = salt["node.get"]("desktop").get("text-scaling-factor", 1.0) %}
+{% set uid = salt["user.info"](username)["uid"] %}
+
+desktop_text_scaling_factor_{{ username }}:
+  cmd.run:
+    - name: gsettings set org.gnome.desktop.interface text-scaling-factor {{ text_scaling_factor }}
+    - runas: {{ username }}
+    - env:
+        DBUS_SESSION_BUS_ADDRESS: unix:path={{ dirs.run }}/user/{{ uid }}/bus
+        XDG_RUNTIME_DIR: {{ dirs.run }}/user/{{ uid }}
+    - unless: test "$(gsettings get org.gnome.desktop.interface text-scaling-factor)" = "{{ text_scaling_factor }}"
+
+{% endfor %}
+{% endif %}
