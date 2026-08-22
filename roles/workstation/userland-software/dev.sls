@@ -176,6 +176,7 @@ devserver_software_dev_misctools:
     - installed
     - pkgs:
       - colordiff
+      - git-lfs
       - git-review
       - git-subtree
 
