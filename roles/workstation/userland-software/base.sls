@@ -57,6 +57,7 @@ utilities:
       - tmux
       - tree
       - whois
+
       {% if grains['os_family'] == 'Debian' %}
       - bsdmainutils
       - sockstat
@@ -64,6 +65,11 @@ utilities:
       - sysvbanner
       - toilet-fonts
       {% endif %}
+
+      {% if grains["os_family"] == "RedHat" %}
+      - util-linux-script
+      {% endif %}
+
       {% if grains['os'] == 'FreeBSD' %}
       - figlet-fonts
       - bind-tools
