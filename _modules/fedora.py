@@ -38,7 +38,7 @@ TIMEOUT = 10
 
 
 def eid_repo_last_version():
-    cache_key = "fedorae.id_repo_last_version"
+    cache_key = "fedora.id_repo_last_version"
     if cache_key in __context__:
         return __context__[cache_key]
 
