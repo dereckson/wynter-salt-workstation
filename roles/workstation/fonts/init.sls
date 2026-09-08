@@ -9,7 +9,7 @@
 {% from "map.jinja" import dirs with context %}
 
 #   -------------------------------------------------------------
-#   Atom packages
+#   FixedSys Excelsior
 #   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 {{ dirs.fonts }}/fixedsys-excelsior:
