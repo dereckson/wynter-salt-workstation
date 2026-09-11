@@ -16,6 +16,9 @@
   file.directory
 
 {{ dirs.fonts }}/fixedsys-excelsior/FSEX300.ttf:
+  file.absent
+
+{{ dirs.fonts }}/fixedsys-excelsior/FSEX302-alt.ttf:
   file.managed:
-    - source: https://web.archive.org/web/20180401213753if_/http://www.fixedsysexcelsior.com/fonts/FSEX300.ttf
-    - source_hash: 6ee0f3573bc5e33e93b616ef6282f49bc0e227a31aa753ac76ed2e3f3d02056d
+    - source: https://github.com/kika/fixedsys/releases/download/v3.09.10/FSEX302-alt.ttf
+    - source_hash: 21b801fe4179dc884a9836d1fbd570ce83249d77204a0a017fbae14aa2dea132
