@@ -8,3 +8,4 @@
 include:
   - .cozette
   - .fixedsys
+  - .symbols

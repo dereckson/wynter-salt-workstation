@@ -25,7 +25,7 @@
 #   -------------------------------------------------------------
 #   fontconfig
 #
-#   Fixedsys Excelsior, falling back to Cozette for missing glyphs
+#   Fixedsys Excelsior, falling back to Symbols Nerd Font
 #   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 {{ dirs.etc }}/fonts/conf.d/51-fixedsys.conf:
