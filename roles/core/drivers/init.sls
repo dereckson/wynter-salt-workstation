@@ -8,5 +8,6 @@
 
 include:
   - .freebsd
+  - .linux-audio
   - .linux-bluetooth
   - .razer
