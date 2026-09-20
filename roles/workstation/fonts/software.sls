@@ -14,4 +14,7 @@ fonts_software:
         - fonttools
 
         # Fonts as packages
+        - {{ packages["font-cascadia"] }}
+        - {{ packages["font-fira-code"] }}
         - {{ packages["font-ibm-plex"] }}
+        - {{ packages["font-jetbrains-mono"] }}
