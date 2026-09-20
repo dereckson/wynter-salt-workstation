@@ -5,9 +5,13 @@
 #   License:        Trivial work, not eligible to copyright
 #   -------------------------------------------------------------
 
-include:
-  - .software
+{% from "map.jinja" import packages with context %}
 
-  - .cozette
-  - .fixedsys
-  - .symbols
+fonts_software:
+  pkg.installed:
+    - pkgs:
+        # Utilities
+        - fonttools
+
+        # Fonts as packages
+        - {{ packages["font-ibm-plex"] }}
