@@ -1,0 +1,114 @@
+site_name: Wynter workstation
+site_description: User guide for a Salt-provisioned Linux ops and development workstation
+site_url: https://github.com/dereckson/wynter-salt-workstation
+repo_name: wynter-salt-workstation
+edit_uri: ""
+copyright: >
+  Docs built against
+  <code>7dc0346</code>
+  — Cap audio volume to avoid accidental maxing
+
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: material
+  custom_dir: docs/overrides
+  language: en
+  font:
+    text: Source Sans 3
+    code: IBM Plex Mono
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.expand
+    - navigation.footer
+    - navigation.top
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.tooltips
+    - toc.follow
+  icon:
+    repo: fontawesome/brands/github
+    logo: material/desktop-classic
+
+extra_css:
+  - stylesheets/rewild.css
+
+extra:
+  generator: false
+  baseline:
+    sha: 7dc0346fcc88f69591f02ba5c238136726479d52
+    short: 7dc0346
+    subject: Cap audio volume to avoid accidental maxing
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.snippets
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.keys
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+nav:
+  - Home: index.md
+  - Using the workstation:
+      - Getting started: getting-started.md
+      - Known machines: machines.md
+      - Shell: shell.md
+      - Desktop and fonts: desktop.md
+      - Software: software.md
+      - Development: development.md
+      - Git helpers: git.md
+      - Hardware and audio: hardware.md
+      - Networking: networking.md
+      - Identity and secrets: identity.md
+      - Local web sites: alkane.md
+      - AI and GPU: ai.md
+  - Reference:
+      - Commands: commands.md
+      - Services: services.md
+      - Pillar options: pillar.md
+  - Other roles:
+      - Fedora RPM work: fedora-dev.md
+      - Windows and Cygwin: windows.md
+      - Rescue utilities: utilities.md
+  - Troubleshooting: troubleshooting.md
+  - About these docs: about.md

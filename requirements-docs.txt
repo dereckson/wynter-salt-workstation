@@ -1,0 +1,6 @@
+# Documentation site (MkDocs Material)
+# Install and build:
+#   python3 -m pip install -r requirements-docs.txt
+#   mkdocs build
+mkdocs>=1.6,<2
+mkdocs-material>=9.5,<10

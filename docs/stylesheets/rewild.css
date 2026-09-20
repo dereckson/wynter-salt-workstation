@@ -1,0 +1,404 @@
+/* 2027 Rewild palette — Wynter workstation docs
+ *
+ * Deep Dive      #376167  primary accent
+ * Fig            #383c49  ink / elevated dark surface
+ * Dark background#171a20
+ * Off-white      #f7f4ec  paper (light) / body text (dark)
+ * Kiss           #813235  strong highlight / danger
+ * Little Blue Box#8ac5ba  secondary accent
+ * Grenadine      #d66972  warning
+ */
+
+:root {
+  --rewild-deep-dive: #376167;
+  --rewild-deep-dive-light: #4d8188;
+  --rewild-deep-dive-dark: #2a4b50;
+  --rewild-fig: #383c49;
+  --rewild-dark: #171a20;
+  --rewild-paper: #f7f4ec;
+  --rewild-kiss: #813235;
+  --rewild-lbb: #8ac5ba;
+  --rewild-grenadine: #d66972;
+}
+
+/* ------------------------------------------------------------------ */
+/* Light                                                                */
+/* ------------------------------------------------------------------ */
+
+[data-md-color-scheme="default"] {
+  --md-default-bg-color: var(--rewild-paper);
+  --md-default-bg-color--light: #f3efe4;
+  --md-default-bg-color--lighter: #efebe0;
+  --md-default-bg-color--lightest: #e8e3d6;
+  --md-default-fg-color: var(--rewild-dark);
+  --md-default-fg-color--light: var(--rewild-fig);
+  --md-default-fg-color--lighter: #5c6170;
+  --md-default-fg-color--lightest: #9a9eaa;
+
+  --md-primary-fg-color: var(--rewild-deep-dive);
+  --md-primary-fg-color--light: var(--rewild-deep-dive-light);
+  --md-primary-fg-color--dark: var(--rewild-deep-dive-dark);
+  --md-primary-bg-color: var(--rewild-paper);
+  --md-primary-bg-color--light: var(--rewild-paper);
+
+  --md-accent-fg-color: var(--rewild-kiss);
+  --md-accent-fg-color--transparent: rgba(129, 50, 53, 0.12);
+  --md-accent-bg-color: var(--rewild-paper);
+
+  --md-typeset-a-color: var(--rewild-deep-dive);
+  --md-typeset-mark-color: rgba(138, 197, 186, 0.45);
+
+  --md-code-fg-color: var(--rewild-fig);
+  --md-code-bg-color: #ece7db;
+  --md-code-hl-color: rgba(55, 97, 103, 0.18);
+  --md-code-hl-name-color: var(--rewild-deep-dive);
+  --md-code-hl-keyword-color: var(--rewild-kiss);
+  --md-code-hl-string-color: #2f6b52;
+  --md-code-hl-number-color: #8a3d42;
+  --md-code-hl-comment-color: #6d7180;
+  --md-code-hl-operator-color: var(--rewild-fig);
+  --md-code-hl-function-color: var(--rewild-deep-dive-dark);
+  --md-code-hl-constant-color: #5a3d6b;
+  --md-code-hl-generic-color: var(--rewild-fig);
+  --md-code-hl-variable-color: var(--rewild-fig);
+
+  --md-footer-bg-color: var(--rewild-fig);
+  --md-footer-bg-color--dark: var(--rewild-dark);
+  --md-footer-fg-color: var(--rewild-paper);
+
+  --rewild-surface: #efebe1;
+  --rewild-border: #d7d1c3;
+  --rewild-table-stripe: #f0ebe0;
+  --rewild-admonition-note: var(--rewild-deep-dive);
+  --rewild-admonition-tip: var(--rewild-lbb);
+  --rewild-admonition-warning: var(--rewild-grenadine);
+  --rewild-admonition-danger: var(--rewild-kiss);
+  --rewild-admonition-info: var(--rewild-deep-dive-light);
+}
+
+/* ------------------------------------------------------------------ */
+/* Dark                                                                 */
+/* ------------------------------------------------------------------ */
+
+[data-md-color-scheme="slate"] {
+  --md-hue: 222;
+  --md-default-bg-color: var(--rewild-dark);
+  --md-default-bg-color--light: #1c2028;
+  --md-default-bg-color--lighter: #222733;
+  --md-default-bg-color--lightest: #2a3140;
+  --md-default-fg-color: var(--rewild-paper);
+  --md-default-fg-color--light: #dcd6c8;
+  --md-default-fg-color--lighter: #b8b3a6;
+  --md-default-fg-color--lightest: #7a7f8c;
+
+  --md-primary-fg-color: var(--rewild-deep-dive);
+  --md-primary-fg-color--light: var(--rewild-deep-dive-light);
+  --md-primary-fg-color--dark: var(--rewild-deep-dive-dark);
+  --md-primary-bg-color: var(--rewild-paper);
+  --md-primary-bg-color--light: var(--rewild-paper);
+
+  --md-accent-fg-color: var(--rewild-lbb);
+  --md-accent-fg-color--transparent: rgba(138, 197, 186, 0.14);
+  --md-accent-bg-color: var(--rewild-dark);
+
+  --md-typeset-a-color: var(--rewild-lbb);
+  --md-typeset-mark-color: rgba(55, 97, 103, 0.55);
+
+  --md-code-fg-color: var(--rewild-paper);
+  --md-code-bg-color: #12151b;
+  --md-code-hl-color: rgba(138, 197, 186, 0.14);
+  --md-code-hl-name-color: var(--rewild-lbb);
+  --md-code-hl-keyword-color: var(--rewild-grenadine);
+  --md-code-hl-string-color: #9ed4c8;
+  --md-code-hl-number-color: #e08a92;
+  --md-code-hl-comment-color: #8a8f9c;
+  --md-code-hl-operator-color: #cfc9bb;
+  --md-code-hl-function-color: #b7ddd4;
+  --md-code-hl-constant-color: #d4b8c8;
+  --md-code-hl-generic-color: var(--rewild-paper);
+  --md-code-hl-variable-color: var(--rewild-paper);
+
+  --md-footer-bg-color: #12151b;
+  --md-footer-bg-color--dark: #0e1015;
+  --md-footer-fg-color: var(--rewild-paper);
+
+  --rewild-surface: var(--rewild-fig);
+  --rewild-border: #4a5060;
+  --rewild-table-stripe: #1d2129;
+  --rewild-admonition-note: var(--rewild-lbb);
+  --rewild-admonition-tip: var(--rewild-deep-dive-light);
+  --rewild-admonition-warning: var(--rewild-grenadine);
+  --rewild-admonition-danger: var(--rewild-kiss);
+  --rewild-admonition-info: var(--rewild-deep-dive-light);
+}
+
+/* ------------------------------------------------------------------ */
+/* Chrome                                                               */
+/* ------------------------------------------------------------------ */
+
+.md-header {
+  background-color: var(--rewild-deep-dive);
+  color: var(--rewild-paper);
+  box-shadow: none;
+  border-bottom: 3px solid var(--rewild-lbb);
+}
+
+.md-header__title,
+.md-header__button,
+.md-search__icon {
+  color: var(--rewild-paper);
+}
+
+.md-tabs {
+  background-color: var(--rewild-deep-dive-dark);
+  color: var(--rewild-paper);
+}
+
+.md-search__form {
+  background-color: rgba(247, 244, 236, 0.14);
+}
+
+.md-search__input,
+.md-search__input::placeholder {
+  color: var(--rewild-paper);
+}
+
+.md-nav__link--active,
+.md-nav__link:is(:focus, :hover) {
+  color: var(--md-typeset-a-color);
+}
+
+.md-nav__item .md-nav__link--passed {
+  color: var(--md-default-fg-color--light);
+}
+
+/* ------------------------------------------------------------------ */
+/* Typesetting                                                          */
+/* ------------------------------------------------------------------ */
+
+.md-typeset h1,
+.md-typeset h2 {
+  color: var(--rewild-deep-dive);
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+[data-md-color-scheme="slate"] .md-typeset h1,
+[data-md-color-scheme="slate"] .md-typeset h2 {
+  color: var(--rewild-lbb);
+}
+
+.md-typeset h2 {
+  border-bottom: 1px solid var(--rewild-border);
+  padding-bottom: 0.25em;
+}
+
+.md-typeset h3 {
+  color: var(--rewild-fig);
+  font-weight: 650;
+}
+
+[data-md-color-scheme="slate"] .md-typeset h3 {
+  color: #c9c3b5;
+}
+
+.md-typeset a:hover {
+  color: var(--md-accent-fg-color);
+}
+
+.md-typeset code {
+  border-radius: 0.2em;
+}
+
+.md-typeset pre > code {
+  border: 1px solid var(--rewild-border);
+  border-left: 3px solid var(--rewild-deep-dive);
+}
+
+.md-typeset table:not([class]) {
+  border: 1px solid var(--rewild-border);
+  font-size: 0.82rem;
+}
+
+.md-typeset table:not([class]) th {
+  background-color: var(--rewild-deep-dive);
+  color: var(--rewild-paper);
+  font-weight: 650;
+  border-bottom: none;
+}
+
+.md-typeset table:not([class]) tr:nth-child(even) td {
+  background-color: var(--rewild-table-stripe);
+}
+
+.md-typeset table:not([class]) td,
+.md-typeset table:not([class]) th {
+  border-color: var(--rewild-border);
+}
+
+.md-typeset kbd {
+  background-color: var(--rewild-surface);
+  border: 1px solid var(--rewild-border);
+  box-shadow: none;
+  color: var(--md-default-fg-color);
+}
+
+.md-typeset mark {
+  color: inherit;
+  box-shadow: none;
+  padding: 0 0.15em;
+}
+
+/* ------------------------------------------------------------------ */
+/* Admonitions — Deep Dive / LBB / Grenadine / Kiss                     */
+/* ------------------------------------------------------------------ */
+
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 0.2em;
+  border-width: 0 0 0 0.25rem;
+}
+
+.md-typeset .admonition.note,
+.md-typeset details.note {
+  border-color: var(--rewild-admonition-note);
+}
+
+.md-typeset .note > .admonition-title,
+.md-typeset .note > summary {
+  background-color: color-mix(in srgb, var(--rewild-admonition-note) 16%, transparent);
+}
+
+.md-typeset .admonition.tip,
+.md-typeset details.tip,
+.md-typeset .admonition.success,
+.md-typeset details.success {
+  border-color: var(--rewild-admonition-tip);
+}
+
+.md-typeset .tip > .admonition-title,
+.md-typeset .tip > summary,
+.md-typeset .success > .admonition-title,
+.md-typeset .success > summary {
+  background-color: color-mix(in srgb, var(--rewild-admonition-tip) 22%, transparent);
+}
+
+.md-typeset .admonition.warning,
+.md-typeset details.warning,
+.md-typeset .admonition.caution,
+.md-typeset details.caution {
+  border-color: var(--rewild-admonition-warning);
+}
+
+.md-typeset .warning > .admonition-title,
+.md-typeset .warning > summary,
+.md-typeset .caution > .admonition-title,
+.md-typeset .caution > summary {
+  background-color: color-mix(in srgb, var(--rewild-admonition-warning) 18%, transparent);
+}
+
+.md-typeset .admonition.danger,
+.md-typeset details.danger,
+.md-typeset .admonition.failure,
+.md-typeset details.failure {
+  border-color: var(--rewild-admonition-danger);
+}
+
+.md-typeset .danger > .admonition-title,
+.md-typeset .danger > summary,
+.md-typeset .failure > .admonition-title,
+.md-typeset .failure > summary {
+  background-color: color-mix(in srgb, var(--rewild-admonition-danger) 18%, transparent);
+}
+
+.md-typeset .admonition.info,
+.md-typeset details.info {
+  border-color: var(--rewild-admonition-info);
+}
+
+.md-typeset .info > .admonition-title,
+.md-typeset .info > summary {
+  background-color: color-mix(in srgb, var(--rewild-admonition-info) 16%, transparent);
+}
+
+.md-typeset .admonition.question,
+.md-typeset details.question {
+  border-color: var(--rewild-fig);
+}
+
+.md-typeset .question > .admonition-title,
+.md-typeset .question > summary {
+  background-color: color-mix(in srgb, var(--rewild-fig) 14%, transparent);
+}
+
+/* ------------------------------------------------------------------ */
+/* Cards / grids                                                        */
+/* ------------------------------------------------------------------ */
+
+.md-typeset .grid.cards > ul > li,
+.md-typeset .grid.cards > ol > li,
+.md-typeset .grid > .card {
+  background: var(--rewild-surface);
+  border: 1px solid var(--rewild-border);
+  border-top: 3px solid var(--rewild-deep-dive);
+  box-shadow: none;
+}
+
+.md-typeset .grid.cards > ul > li:hover,
+.md-typeset .grid.cards > ol > li:hover {
+  border-top-color: var(--rewild-lbb);
+}
+
+/* ------------------------------------------------------------------ */
+/* Footer / baseline                                                    */
+/* ------------------------------------------------------------------ */
+
+.md-footer {
+  border-top: 3px solid var(--rewild-deep-dive);
+}
+
+.md-footer-meta {
+  background-color: var(--md-footer-bg-color--dark);
+}
+
+.md-copyright {
+  color: color-mix(in srgb, var(--rewild-paper) 78%, transparent);
+}
+
+.md-copyright code {
+  background: transparent;
+  color: var(--rewild-lbb);
+  font-size: 0.85em;
+}
+
+/* ------------------------------------------------------------------ */
+/* Misc                                                                 */
+/* ------------------------------------------------------------------ */
+
+.md-typeset hr {
+  border-color: var(--rewild-border);
+}
+
+.md-sidebar .md-nav--secondary > .md-nav__title {
+  color: var(--rewild-deep-dive);
+}
+
+[data-md-color-scheme="slate"] .md-sidebar .md-nav--secondary > .md-nav__title {
+  color: var(--rewild-lbb);
+}
+
+.md-typeset .md-button {
+  border-radius: 0.15em;
+}
+
+.md-typeset .md-button--primary {
+  background-color: var(--rewild-deep-dive);
+  border-color: var(--rewild-deep-dive);
+  color: var(--rewild-paper);
+}
+
+.md-typeset .md-button--primary:hover {
+  background-color: var(--rewild-kiss);
+  border-color: var(--rewild-kiss);
+  color: var(--rewild-paper);
+}
