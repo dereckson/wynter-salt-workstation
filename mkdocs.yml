@@ -1,7 +1,6 @@
 site_name: Wynter workstation
 site_description: User guide for a Salt-provisioned Linux ops and development workstation
-site_url: ""
-repo_url: https://github.com/dereckson/wynter-salt-workstation
+site_url: https://github.com/dereckson/wynter-salt-workstation
 repo_name: wynter-salt-workstation
 edit_uri: ""
 copyright: >

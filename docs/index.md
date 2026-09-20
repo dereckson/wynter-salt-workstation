@@ -62,7 +62,7 @@ Hosts are selected in the state top file by minion id (`bluedrake`, `draugh`, `y
 
 ## This documentation
 
-Built against git **`7dc0346`** — *Cap audio volume to avoid accidental maxing* (`7dc0346fcc88f69591f02ba5c238136726479d52`). See [About these docs](about.md) for the baseline and [DOCS_NOTES.md](https://github.com/dereckson/wynter-salt-workstation/blob/main/DOCS_NOTES.md) in the repository for open questions from this first pass.
+Built against git **`7dc0346`** — *Cap audio volume to avoid accidental maxing* (`7dc0346fcc88f69591f02ba5c238136726479d52`). See [About these docs](about.md) for the baseline, and `DOCS_NOTES.md` at the repository root for open questions from this first pass.
 
 Serve a local copy:
 
