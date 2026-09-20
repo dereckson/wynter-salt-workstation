@@ -44,3 +44,14 @@ Wynter salt states aren't intended for servers but for workstations.
 To get a comprehensive dev environment for remote dev servers,
 check https://devcentral.nasqueron.org/diffusion/OPS/ devserver
 role maintained by the Nasqueron open source project.
+
+Documentation
+=============
+
+User-facing docs (what the workstation provides, commands, pillar knobs)
+are an MkDocs Material site:
+
+    python3 -m pip install -r requirements-docs.txt
+    mkdocs serve
+
+See ``docs/`` and ``DOCS_NOTES.md``.
